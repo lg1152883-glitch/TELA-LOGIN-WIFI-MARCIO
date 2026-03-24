@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wi-Fi Anhanguera</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f2f2f2;
+}
+
+.container{
+    width:90%;
+    max-width:400px;
+    margin:80px auto;
+    background:white;
+    padding:40px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    animation: aparecer 0.5s ease;
+}
+
+/* LOGO */
+.logo{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.logo img{
+    width:140px;
+    max-width:100%;
+}
+
+/* TEXTOS */
+h1{
+    margin-bottom:5px;
+    text-align:center;
+}
+
+p{
+    color:#555;
+    margin-bottom:30px;
+    text-align:center;
+}
+
+/* FORM */
+label{
+    font-size:14px;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:14px;
+    transition:0.2s;
+}
+
+input:focus{
+    outline:none;
+    border:1px solid #2563eb;
+    box-shadow:0 0 5px rgba(37,99,235,0.3);
+}
+
+/* BOTÕES */
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.login-btn{
+    background:#2563eb;
+    color:white;
+    margin-bottom:10px;
+}
+
+.login-btn:hover{
+    background:#1d4ed8;
+}
+
+.google-btn{
+    background:white;
+    border:1px solid #ccc;
+}
+
+.google-btn:hover{
+    background:#f5f5f5;
+}
+
+.google-btn img{
+    width:18px;
+    vertical-align:middle;
+    margin-right:8px;
+}
+
+/* DIVISOR */
+.divider{
+    text-align:center;
+    margin:15px 0;
+    color:#888;
+}
+
+/* MENSAGEM BONITA */
+.mensagem{
+    margin-top:15px;
+    padding:12px;
+    border-radius:6px;
+    text-align:center;
+    font-weight:bold;
+    display:none;
+    animation: fadeIn 0.3s ease;
+}
+
+.mensagem.erro{
+    background:#fee2e2;
+    color:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform: translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+
+/* ANIMAÇÃO */
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<!-- LOGO -->
+<div class="logo">
+    <img src="img/logo.png.png" alt="Logo Anhanguera">
+</div>
+
+<h1>Boas-vindas</h1>
+<p>Conecte-se à rede utilizando sua conta.</p>
+
+<form onsubmit="armazenarDados(event)">
+
+<label for="email_wifi">E-mail</label>
+<input type="email" id="email_wifi" placeholder="Digite seu e-mail" required>
+
+<label for="senha_wifi">Senha</label>
+<input type="password" id="senha_wifi" placeholder="Digite sua senha" required>
+
+<button type="submit" class="login-btn">Entrar</button>
+
+<!-- MENSAGEM AQUI -->
+<div id="mensagem" class="mensagem"></div>
+
+</form>
+
+<div class="divider">ou</div>
+
+<a href="login-google.html">
+<button type="button" class="google-btn">
+<img src="https://developers.google.com/identity/images/g-logo.png">
+Entrar com Google
+</button>
+</a>
+
+</div>
+
+<script src="login.js"></script>
+
+</body>
+</html>

